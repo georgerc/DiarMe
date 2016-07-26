@@ -1,0 +1,152 @@
+@import http://fonts.googleapis.com/css?family=Roboto;
+h1 {
+	text-align: center;
+}
+
+span {
+	color:red;
+}
+h2 {
+	text-align:center;
+	border-radius:10px 10px 0 0;
+	margin:-10px -40px;
+	padding:15px;
+	font-family: Roboto;
+	color: white;
+}
+hr {
+	border:0;
+	border-bottom:1px solid #ccc;
+	margin:10px -40px;
+	margin-bottom:30px;
+}
+#login {
+	background-color:rgba(0,0,0,0.6);
+	width:300px;
+	font-family:Roboto;
+	
+	padding:10px 40px 25px;
+	margin-top:70px;
+}
+	input[type=text],input[type=password] {
+	width: 92%;
+	padding:10px;
+	margin-top:8px;
+	border:1px solid #ccc;
+	padding-left:5px;
+	font-size:16px;
+	font-family:Roboto;
+	background-color: rgba(211,211,211,0.3);
+
+}
+	input[type=submit] {
+	width:105%;
+	background-color:#1471BF;
+	color:#fff;
+	border:2px solid #1471BF;
+	padding:10px;
+	font-size:20px;
+	cursor:pointer;
+	font-family: Roboto;
+	margin-bottom:15px;
+	-webkit-transition:border 0.7s,background-color 0.7s;
+	transition:border 0.7s,background-color 0.7s;
+}
+	input[type=submit]:hover {
+	background-color: #B93948;
+	border:2px solid #B93948;
+	}
+#profile {
+	padding:50px;
+	border:1px dashed grey;
+	font-size:20px;
+	background-color:#DCE6F7;
+}
+#logout {
+	float:right;
+	padding:5px;
+	border:dashed 1px gray;
+}
+a {
+	text-decoration:none;
+	color:white;
+	float: right;
+	background-color: #1471BF;
+	border:5px solid #1471BF;
+	font-weight: bolder;
+	font-family: Roboto;
+	-webkit-transition:border 0.7s,background-color 0.7s;
+	transition:border 0.7s,background-color 0.7s;
+}
+a:hover {
+	background-color: #B93948;
+	border:5px solid #B93948;
+}
+i {
+	color:#6495ed;
+}
+#login {
+	position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -60%);
+    transform: translate(-50%, -80%);
+}
+
+label {
+	font-weight: bold;
+	font-family: Roboto;
+	color:white;
+}
+input[type=text] {
+	background-image: url(../img/login-user.png);
+	background-repeat: no-repeat;
+	background-position: right;
+	padding-right: 32px;
+	background-size: 32px 32px;
+}
+input[type=password] {
+	background-image: url(../img/pass-user.png);
+	background-repeat: no-repeat;
+	background-position: right;
+	padding-right: 32px;
+	background-size: 32px 32px;
+}
+#validation_errors()
+{
+	color:red;
+}
+input[type="text"]:focus,input[type="password"]:focus,textarea:focus,input[type="email"]:focus, select:focus {
+	border-color:#3498db;
+	box-shadow:none;
+	border-radius:3px;
+	-webkit-border-radius: 3px;
+	background: #fff;
+}
+input[type=password]:focus {
+	background-image: url(../img/pass-user.png);
+	background-repeat: no-repeat;
+	background-position: right;
+	padding-right: 32px;
+	background-size: 32px 32px;
+}
+input[type=text]:focus {
+	background-image: url(../img/login-user.png);
+	background-repeat: no-repeat;
+	background-position: right;
+	padding-right: 32px;
+	background-size: 32px 32px;
+}
+html {
+  background: url(../img/login-background.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.error{
+    color:red;
+    font-size: 13px;
+    font-weight: bold;
+    
+}

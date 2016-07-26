@@ -1,0 +1,180 @@
+.side-bar {
+  width:100%;
+  background-color: white;
+  top:110px;
+  border-right: 1px solid black;
+  display: none;
+  position: absolute;
+
+}
+
+.animate-left{
+  -webkit-animation:animateleft 0.4s;
+  animation:animateleft 0.4s}
+
+@-webkit-keyframes animateleft{
+  from{left:-300px;opacity:0} 
+          to{left:0;opacity:1}
+}
+
+@keyframes animateleft{
+  from{left:-300px;opacity:0} 
+          to{left:0;opacity:1}
+}
+
+#journal {
+    margin-top: 10px;
+    height:55px;
+    width: 100%;
+    text-align: left;
+    background-color: transparent;
+    border: none;
+    outline:none;
+    color:black;
+    border-radius: 0;
+    border-bottom: 1px solid black;
+
+}
+#bara-user-mobile {
+  display: inline-block;
+  height: 110px;
+  z-index: 2;
+  width: 100%;
+
+}
+
+.closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px !important;
+    margin-left: 50px;
+}
+#bara-copie {
+    display: inline-block;
+  height: 100px;
+  width: 100%;
+}
+#notebook_page {
+  max-width: 1000px;
+  background-color:#DACA97;
+  padding-bottom: 0;
+  font-size: 32px;
+  margin-top: 50px;
+}
+textarea {
+  height: 70vh;
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 95%;
+  background: transparent;
+  border: none;
+  overflow-y:none;
+
+      -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  resize:none;
+  outline: none;
+}
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-track {
+    background-color: #eaeaea;
+    border-left: 1px solid #ccc;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #bbb;
+}
+
+
+#customization {
+  width: 99.9999%;
+  z-index: 9999;
+}
+.dropdown {
+    display: inline-block;
+}
+.dropdown-content {
+  color:black!important;
+    display: none;
+    position: absolute;
+    right:0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+}
+
+
+#bara-user-large {
+  display: none;
+}
+#bara-user-medium {
+  display: none;
+}
+@media only screen and (min-width:601px) {
+#notebook_page {
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+.side-bar {
+  width:250px;
+}
+#bara-user-mobile {
+  display: none;
+}
+#bara-copie {
+  display: none;
+}
+#bara-user-large {
+  height:90px;
+  z-index: 2;
+  margin: 0 auto
+}
+textarea {
+  height: 75%;
+  margin-left: 30px;
+  width: 95%
+}
+
+#buton_trimitere {
+  height: 10%;
+}
+#bara-user-medium {
+  display:block;
+}
+.menu-vertical {
+  width:240px;
+}
+}
+@media only screen and (min-width:993px) {
+#customization {
+  font-size: 18px;
+}
+textarea {
+  height:80%;
+
+}
+a {
+  font-size: 16.5px;
+}
+#buton_trimitere {
+  height: 7%;
+}
+
+}
+@media only screen and (min-width:1350px) {
+#bara-user-large {
+  display: block;
+}
+#bara-user-medium {
+  display: none;
+}
+}
