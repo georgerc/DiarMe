@@ -28,7 +28,7 @@ body {
           Write your stories and never forget them</p><br>
 
     <div class="w3-container"  style="margin:auto">
-<?php echo form_open('verifylogin'); ?>   
+<?php echo form_open('user/login'); ?>
 
     <form class="w3-container" id="formular_logare">
 

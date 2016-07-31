@@ -1,7 +1,10 @@
 body {
+    background: url("../img/nightstars.jpg")no-repeat center center fixed;
 
-  background-image: url(../img/nightstars.jpg);
-  background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
   font-family: Raleway;
 }
 input[type=text] {
@@ -18,9 +21,7 @@ input[type=email] {
     padding-right: 32px;
     background-size: 32px 32px;
 }
-.aditional button {
-	width: 85%;
-}
+
 input[type=password] {
     background-image: url(../img/pass-user.png);
     background-repeat: no-repeat;
@@ -45,15 +46,13 @@ input[type=text],input[type=password],input[type=email] {
     font-family:Raleway;
     background-color: rgba(211,211,211,0.7);
 }
-.formular-children input[type=text],input[type=password],input[type=email] {
-	width: 92%;
-}
+
 .caseta-modala-children input[type=text],input[type=password],input[type=email] {
 	width: 100%;
 }
 .login-box {
 	height:600px;
-	max-width: 850px;
+	max-width: 800px;
 
 }
 #intro-text {
@@ -91,7 +90,14 @@ body  {
   background-size: cover;
 
 }
-
+.test123 {
+    width: 90%;
+    float:left;
+    margin-left: 0;
+}
+.test1234 {
+    margin-left: 0;
+}
 @media only screen and (min-width:601px) {
 .login-box {
 	  position: absolute;
@@ -105,10 +111,11 @@ body  {
 #buton_logare {
 	width:88%;
 }
-.aditional {
-  width: 93%;
-  margin: auto;
-
+.test123 {
+    width:45%;height:35px;
+}
+.test1234 {
+    margin-left:1%;float:right;
 }
 }
 

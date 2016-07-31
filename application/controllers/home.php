@@ -1,5 +1,4 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
+<?php
 class Home extends CI_Controller {
 
     function __construct()
@@ -9,14 +8,14 @@ class Home extends CI_Controller {
 
     public function index()
     {
-        if($this->session->userdata('logged_in'))
+        if($this->session->userdata('logged_in') === True)
         {
             $session_data = $this->session->userdata('logged_in');
-            $this->load->model('PostModel'); // load model 
-            $data['posts'] = $this->PostModel->getPosts($this->session->userdata('username'));   
+            $this->load->model('postModel'); // load model
+            $data['posts'] = $this->postModel->getPosts($this->session->userdata('username'));
             $data['username'] = $session_data['username'];
-            $this->load->view('home_view', $data);
 
+            $this->load->view('home_view', $data);
         }
         else
         {
