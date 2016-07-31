@@ -5,6 +5,7 @@
     <link rel="icon" href="<?php echo base_url() ?>img/logo.ico" type="image/x-icon"/>
     <link rel="shortcut icon" href="<?php echo base_url() ?>img/logo.ico" type="image/x-icon"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
     <link rel="stylesheet" href="<?php echo base_url() ?>css/bootstrap.min.css"/>
     <link href='<?php echo base_url() ?>css/raleway.css' rel='stylesheet' type='text/css'>
     <script src="<?php echo base_url() ?>js/jquery.min.js"></script>

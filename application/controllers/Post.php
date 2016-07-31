@@ -5,15 +5,15 @@ class Post extends CI_Controller
     function __Construct()
     {
         parent::__Construct();
-        $this->load->database(); // load database
-        $this->load->model('postModel'); // load model
+        $this->load->database(); // load database/Icarcam baza de date global.
+        $this->load->model('postModel'); // load model/Incarcam,modelul postModel.
     }
 
     public function index()
     {
-        $data['posts'] = $this->postModel->getPosts(); // calling Post model method getPosts()
+        $data['posts'] = $this->postModel->getPosts(); // calling Post model method getPosts()/ Apel la functia getPosts();
 
-        $this->load->view('home_view', $data); // load the view file , we are passing $data array to view file
+        $this->load->view('home_view', $data); // load the view file , we are passing $data array to view file//incarca file view, incarcam $data la view-ul "home_view";
     }
 
     public function delete($post_id = NULL)
@@ -22,7 +22,7 @@ class Post extends CI_Controller
 
         redirect('/home', 'refresh');
     }
-
+//Main discover_view function/Functia pricipala de pe pagina de discover.
     public function discover($page = 1)
     {
         $this->load->model('discover');
@@ -37,6 +37,7 @@ class Post extends CI_Controller
 
     }
 
+    //Edit funtion/Functia de edit.
     public function edit($post_id = NULL){
         $data['posts'] = $this->postModel->getPosts($this->session->userdata('username'));
 

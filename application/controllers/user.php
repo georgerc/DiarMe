@@ -2,13 +2,14 @@
 
 class User extends CI_Controller
 {
-
+//parent contruct incarca in tota classa.
     function __construct()
     {
         parent::__construct();
         $this->load->model('userModel', '', TRUE);
     }
 
+    //Functia de login
     function login()
     {
         $this->load->library('form_validation');
@@ -24,7 +25,8 @@ class User extends CI_Controller
             redirect('home', 'refresh');
         }
     }
-
+//Logiut funtion
+//Funtia de logout
     function logout()
     {
         $this->session->unset_userdata('logged_in');
@@ -36,9 +38,12 @@ class User extends CI_Controller
     function check_database($password)
     {
         //Field validation succeeded.  Validate against database
+        //Validarea contra form_validation completata cu succes.//apelare login din model pentru validare impotriva bazei de date.
         $username = $this->input->post('username');
 
-        //query the database
+        //query the database// Validare inpotriva bazei de date
+        //NOTE ! =========
+        //Folosteste escape() la query pentru protectie.
         $result = $this->userModel->login($username, $password);
 
         if ($result) {
