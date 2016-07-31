@@ -108,7 +108,7 @@ class Forgot_Password_C extends CI_Controller
 
             }else
             {
-                $this->load->view('shit');
+                $this->load->view('login_view');
 
             }
 
