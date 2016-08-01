@@ -93,14 +93,14 @@
 
     <button class="w3-btn" id="buton"
             style="background:url('<?php echo base_url(); ?>img/logo4.png')
-;float:left;margin-left:50px;height:50px;width:170px;">
+                ;float:left;margin-left:30px;height:50px;width:170px;">
 
     </button>
 
     <div class="modifiers w3-container" style="max-width:1000px;margin:0 auto;padding:0;height:100%">
 
-        <div class="w3-third" style="height:100%;">
-            <div class="w3-container  w3-center " style="max-width:70%;margin:0 auto;padding:0">
+        <div class="w3-third" style="height:100%;width:32%;float:left">
+            <div class="w3-container  w3-center " style="max-width:60%;margin:0 auto;padding:0">
                 <span class="w3-card-8" style="">Aa</span>
 
                 <select class="w3-card-8" id="input-size" class="w3-input " onchange="changeSize (this);"
@@ -127,8 +127,8 @@
         </div>
 
 
-        <div class="w3-third" style="height:100%;">
-            <div class="w3-container  w3-center" style="max-width:70%;margin:0 auto;padding:0">
+        <div class="w3-third" style="height:100%;width:32%;float:left">
+            <div class="w3-container  w3-center " style="max-width:60%;margin:0 auto;padding:0">
                 <span id="preview" class="w3-card-8">Aa</span>
 
                 <select id="input-font" class="w3-input w3-card-8" onchange="changeFont (this);"
@@ -148,8 +148,8 @@
             </div>
         </div>
 
-        <div class="w3-third" style="height:100%">
-            <div class="w3-container  w3-center" style="max-width:70%;margin:0 auto;padding:0">
+        <div class="w3-third" style="height:100%;width:32%;float:left">
+            <div class="w3-container  w3-center " style="max-width:60%;margin:0 auto;padding:0">
                 <span id="span" class="w3-card-8">Aa</span>
 
                 <input value="Font Color" disabled
@@ -163,12 +163,14 @@
     <div class="w3-row w3-card-8 w3-container" id="togglebar"
          style="cursor:pointer;position:absolute;right:70px;top:0;width:210px;height:100%;line-height:15px;background-color:#333F44">
             <span id="user-info"><span
-                    style="color:lightblue;font-size:16px;line-height:50px;float:right;margin-right:50px"><?php echo $this->session->userdata('username'); ?></span>
+                    style="color:lightblue;font-size:16px;line-height:50px;float:right;margin-right:50px"><?php echo $this->session->userdata('username') ?></span>
 
             </span>
 
-        <img class="w3-card-4 w3-circle"
-             src="<?php echo base_url(); ?>uploads/<?php echo $this->session->userdata('username') ?>.jpg"
+        <img class="w3-card-4 w3-circle" <?php echo $this->session->userdata('avatar') ?>
+             src="<?php echo base_url(); ?>uploads/<?php if($this->session->userdata('avatar')==='1'    ) echo $this->session->userdata('username').'.jpg';
+                       else echo 'default'.'.png';
+             ?>"
              style="width:50px;height:50px;position:absolute;top:0;right:10px">
 
         <div class="w3-center" id="settingss"
@@ -271,10 +273,12 @@
 
             </span>
 
-        <img class="w3-card-4 w3-circle"
-             src="<?php echo base_url(); ?>uploads/<?php echo $this->session->userdata('username') ?>.jpg"
-             style="width:50px;height:50px;position:absolute;top:0;right:10px">
 
+        <img class="w3-card-4 w3-circle" <?php echo $this->session->userdata('avatar') ?>
+             src="<?php echo base_url(); ?>uploads/<?php if($this->session->userdata('avatar')==='1'    ) echo $this->session->userdata('username').'.jpg';
+             else echo 'default'.'.png';
+             ?>"
+             style="width:50px;height:50px;position:absolute;top:0;right:10px">
 
     </div>
 
@@ -309,10 +313,12 @@
         </button>
 
         <div id="togglebar3" style="cursor:pointer;">
-            <img class="w3-circle w3-card-4"
-                 src="<?php echo base_url(); ?>uploads/<?php echo $this->session->userdata('username') ?>.jpg"
-                 style="position:absolute;left:70px;width:50px;height:50px;">
 
+            <img class="w3-card-4 w3-circle" <?php echo $this->session->userdata('avatar') ?>
+                 src="<?php echo base_url(); ?>uploads/<?php if($this->session->userdata('avatar')==='1'    ) echo $this->session->userdata('username').'.jpg';
+                 else echo 'default'.'.png';
+                 ?>"
+                 style="position:absolute;left:70px;width:50px;height:50px;">
             <span id="user-info" style="font-size:20px;position:absolute;left:125px;top:17px"><span
                     style="color:lightblue"><?php echo $this->session->userdata('username'); ?></span>
 
@@ -511,21 +517,21 @@ foreach ($posts as $post) {
     <p class="w3-padding-top w3-center" style="font-size:28px">Writing a chapter of your life</p>
     <div style="width:80%;height:2px;background-color:black;clear:both;margin:0 auto"></div>
 
-    <?php echo form_textarea('journal-text', set_value(''), 'class="journal-text"'); ?>
+    <?php echo form_textarea('journal-text', set_value(''), 'class="journal-text"', 'id="journal-text"'); ?>
 
     <div class="w3-right w3-padding-right">
-        <button id="buton_trimitere" class="w3-btn" type="button"name="trimitere" value="Submit" data-toggle="modal"
-                data-target="#myModal" style="margin-bottom:10px;color:white;background-color:#43474D;">Submit
+        <button id="buton-trimitere" class="w3-btn" type="button"name="trimitere" value="Submit" data-toggle="modal"
+                data-target="#myModal" style="position:fixed;bottom:10px;right:15%;color:white;background-color:#43474D;">Submit
         </button>
     </div>
 
 </div>
 <!-- END TEXT AREA -->
-
+<!-- MODAL SUBMIT -->
 <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
 
-        <!-- Modal content-->
+
         <div class="modal-content" style="margin-top:25vh">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -565,8 +571,8 @@ foreach ($posts as $post) {
 
     </div>
 </div>
-
-
+<!-- END MODAL SUBMIT -->
+<!-- SETTINGS MODAL -->
 <div class="modal fade" id="password-change" role="dialog">
     <div class="modal-dialog">
 
@@ -603,10 +609,12 @@ foreach ($posts as $post) {
                 <div class="w3-row w3-margin-top">
                     <div class="w3-half w3-center">
                         <h4>Current picture</h4>
-                        <img class="w3-card-4"
-                             src="<?php echo base_url(); ?>uploads/<?php echo $this->session->userdata('username') ?>.jpg"
-                             style="margin-top:20px;width:130px;height:130px;">
 
+                        <img class="w3-card-4" <?php echo $this->session->userdata('avatar') ?>
+                             src="<?php echo base_url(); ?>uploads/<?php if($this->session->userdata('avatar')==='1'    ) echo $this->session->userdata('username').'.jpg';
+                             else echo 'default'.'.png';
+                             ?>"
+                             style="margin-top:20px;width:130px;height:130px;">
 
                     </div>
                     <div class="w3-half">
@@ -641,7 +649,7 @@ foreach ($posts as $post) {
 
     </div>
 </div>
-
+<!-- END SETTINGS MODAL -->
 
 <script type="text/javascript">
     $("#togglebar").click(function () {
@@ -655,19 +663,25 @@ foreach ($posts as $post) {
     });
     $("#dLabel").click(function () {
         $("#meniu-dropdown").fadeToggle();
-    })
+    });
+
+    $(function() {
+        $("#buton-trimitere").animate(
+            { opacity : "+=1"}, 2500, function() {}
+        );
+    });
     function chooseFile() {
         $("#fileInput").click();
     }
 
     function changeSize(selectTag) {
         var listValue = selectTag.options[selectTag.selectedIndex].text;
-        document.getElementById("text-jurnal").style.fontSize = listValue;
+        document.getElementsByTagName('textarea')[0].style.fontSize = listValue;
+
     }
 
     var changeFont = function (font) {
-        console.log(font.value)
-        document.getElementById("text-jurnal").style.fontFamily = font.value;
+        document.getElementsByTagName('textarea')[0].style.fontFamily = font.value;
         document.getElementById("preview").style.fontFamily = font.value;
     }
 
@@ -713,7 +727,7 @@ foreach ($posts as $post) {
     });
 
     $("#buton-close").click(function () {
-        $("#side-bar").toggle();
+        $("#side-bar").slideToggle();
     });
 
 
@@ -722,12 +736,10 @@ foreach ($posts as $post) {
         var $header = $('#bara-user-large');
         var $content = $('#side-bar');
         var $pagina = $('#notebook_page');
+        var height = $(this).height() - $header.height();
+        $content.height(height);
+        $pagina.height(height - 50);
 
-        var $window = $(window).on('resize', function(){
-            var height = $(this).height() - $header.height();
-            $content.height(height);
-            $pagina.height(height - 50);
-        }).trigger('resize');
 
     });
 </script>

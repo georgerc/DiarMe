@@ -19,7 +19,7 @@ class Forgot_Password_C extends CI_Controller
         if (isset($_POST['email'])) {
             $this->load->library("form_validation");
             $this->load->helper('security');
-            $this->form_validation->set_rules('email', "Email Adress", 'trim|required|min_length[6]|max_length[50]|xss_clean');
+            $this->form_validation->set_rules('email', "Email Adress", 'trim|required|min_length[6]|max_length[50]');
             if ($this->form_validation->run() == FALSE) {
                 $this->load->view('login_view', array('error' => 'Please enter a valid email adress'));
 
@@ -108,7 +108,7 @@ class Forgot_Password_C extends CI_Controller
 
             }else
             {
-                $this->load->view('login_view');
+                $this->load->view('shit');
 
             }
 

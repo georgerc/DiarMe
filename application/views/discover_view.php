@@ -45,8 +45,12 @@
         <?php $k = 6 * ($page - 1) + 1;
         foreach ($posts as $post) {
             ?>
-            <div class="journal-entry w3-bluew3-card-8" >
-                <img class="w3-card-4 w3-circle" src="<?php echo base_url(); ?>uploads/<?php echo $post->username ?>.jpg" style="width:80px;height:80px;position:relative;left:-120px;top:72px;">
+            <div class="journal-entry" >
+                <img class="w3-card-4 w3-circle" <?php echo $this->session->userdata('avatar') ?>
+                     src="<?php echo base_url(); ?>uploads/<?php if($this->session->userdata('avatar')==='1'    ) echo $post->username.'.jpg';
+
+                     ?>"
+                     style="width:80px;height:80px;position:relative;left:-120px;top:72px;">
                 <div id="toggler">
 
                     <span class="entry-number"><?php echo $k.".";

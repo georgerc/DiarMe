@@ -55,6 +55,8 @@ class User extends CI_Controller
                 );
                 $this->session->set_userdata('logged_in', True);
                 $this->session->set_userdata('username', $username);
+               $this->session->set_userdata('avatar',$this->userModel->getavatar($username));
+
                 redirect('home');
             }
             return TRUE;

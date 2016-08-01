@@ -22,6 +22,7 @@ class Discover extends CI_Model
         $result = $this->db->query($test);
         return $result->num_rows();
     }
+
 }
 
 ?>

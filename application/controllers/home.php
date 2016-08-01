@@ -12,17 +12,17 @@ class Home extends CI_Controller {
         {
             $session_data = $this->session->userdata('logged_in');
             $this->load->model('postModel'); // load model
+            $this->load->model('userModel'); // load model
             $data['posts'] = $this->postModel->getPosts($this->session->userdata('username'));
             $data['username'] = $session_data['username'];
-
+            $data['avatar']=$this->userModel->getAvatar($this->session->userdata('username'));
             $this->load->view('home_view', $data);
         }
         else
-        {
             //If no session, redirect to login page
              $this->load->view('login_view');
         }
-    }
+
 
     function logout()
     {
@@ -38,4 +38,5 @@ class Home extends CI_Controller {
     }
 
 }
+
 ?>

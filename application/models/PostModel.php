@@ -41,6 +41,7 @@ class PostModel extends CI_Model
         $this->db->update('journals');
 
     }
+
 }
 
 ?>

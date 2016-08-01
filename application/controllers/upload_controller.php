@@ -20,6 +20,7 @@ public function index()
         {
             $this->session->set_flashdata('upld_img',"<div style='color:green;'>Image uploaded successfully,please refresh the page to see the changes. .</div>");
             $data = array('upload_data' => $this->upload->data());
+            $this->session->set_userdata('avatar','1');
             redirect('/home','refresh:3 ');
         }
         else

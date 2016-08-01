@@ -20,6 +20,22 @@ Class UserModel extends CI_Model
             return false;
         }
     }
+
+    function getavatar($username)
+    {
+        $this->load->database();
+        $this->db->select('avatar');
+        $this->db->from('members');
+        $this->db->where('username', $username);
+        $this->db->limit(1);
+
+        $query = $this->db->get();
+        $data = $query->result_array();
+
+        //echo($data[0]['avatar']);
+        return $data[0]['avatar'];
+
+    }
 }
 
 ?>

@@ -26,7 +26,7 @@ class Post extends CI_Controller
     public function discover($page = 1)
     {
         $this->load->model('discover');
-
+        $this->load->model('userModel');
         $data['posts'] = $this->discover->getDiscoverPosts($page);
 
         $data['result'] = $this->discover->getNumberOfPosts();
