@@ -30,12 +30,6 @@ class Home extends CI_Controller {
         $this->load->view('login_view');
     }
 
-    function post_data($id) {
-        // ceri datele de la baza de date
-        
-        // dai return in format JSON
-    }
-
 }
 
 ?>

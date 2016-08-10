@@ -46,4 +46,3 @@ class Forgot_Password_M extends CI_Model
 
 }
 
-?>

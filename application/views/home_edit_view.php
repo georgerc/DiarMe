@@ -405,7 +405,7 @@
 
     <div style="width:100%;height:2px;background-color:black;margin:15px auto"></div>
 
-    <button onclick="location.href = '<?php echo site_url("post/discover/1"); ?>';"
+    <button onclick="location.href = '<?php echo site_url("user/discover/1"); ?>';"
     " class="w3-btn"
     style="color:#94F3E4;background-color:#43474D;font-size:1.2em;border-radius:0;width:100%;height:50px;margin:15px auto;padding:10px">Discover other
     journals
@@ -510,7 +510,7 @@ foreach ($posts as $post) {
 <!-- END MODAL JURNALE -->
 
 <!-- TEXT AREA -->
-<?php echo form_open('scripts/insert_edit_text'); ?>
+<?php echo form_open('user/insert_edit_text'); ?>
 <div class="w3-animate-zoom" id="notebook_page">
     <p class="w3-padding-top w3-center" style="font-size:28px">Writing a chapter of your life</p>
     <div style="width:80%;height:2px;background-color:black;clear:both;margin:0 auto"></div>
@@ -584,7 +584,7 @@ foreach ($posts as $post) {
             <div class="modal-body">
                 <h2>Changing your password</h2>
 
-                <?php echo form_open('scripts/change_password') ?>
+                <?php echo form_open('user/change_password') ?>
 
                 <input placeholder="Old Password" id="old_pass" name="old_pass" class="w3-input w3-border"
                        type="password" style="margin-bottom:25px">
@@ -639,12 +639,12 @@ foreach ($posts as $post) {
                         <br><br><br>
                     </div>
                     <div style="width:100%;height:50px">
-                        <a href="<?php echo base_url(); ?>scripts/delete_all_C ">
+                        <a href="<?php echo base_url(); ?>user/delete_all_C ">
                             <button type="button"  class='w3-btn w3-hover-white w3-third'
                                     style="float:left;height:35px;border:none;outline:none;margin-left:10px;">Delete account
                             </button></a>
 
-                        <a href="<?php echo base_url();?>scripts/delete_journals_C">
+                        <a href="<?php echo base_url();?>user/delete_journals_C">
                             <button type="button"  class='w3-btn w3-hover-white w3-third'
                                     style="float:left;height:35px;border:none;outline:none;margin-left:10px;">Delete journals
                             </button></a>

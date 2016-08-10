@@ -97,7 +97,7 @@
             </div>
             <div class="modal-body " style="padding:0;margin:0">
                 <div id="Demo2" class="caseta-modala w3-container w3-animate-zoom" style="margin:auto">
-                    <?php echo form_open('register/register_user'); ?>
+                    <?php echo form_open('user/register_user'); ?>
                     <label>Username</label>
                     <p></p>
 
