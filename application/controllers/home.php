@@ -11,9 +11,8 @@ class Home extends CI_Controller {
         if($this->session->userdata('logged_in') === True)
         {
             $session_data = $this->session->userdata('logged_in');
-            $this->load->model('postModel'); // load model
             $this->load->model('userModel'); // load model
-            $data['posts'] = $this->postModel->getPosts($this->session->userdata('username'));
+            $data['posts'] = $this->userModel->getPosts($this->session->userdata('username'));
             $data['username'] = $session_data['username'];
             $data['avatar']=$this->userModel->getAvatar($this->session->userdata('username'));
             $this->load->view('home_view', $data);

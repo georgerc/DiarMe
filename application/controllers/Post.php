@@ -6,19 +6,20 @@ class Post extends CI_Controller
     {
         parent::__Construct();
         $this->load->database(); // load database/Icarcam baza de date global.
-        $this->load->model('postModel'); // load model/Incarcam,modelul postModel.
+        $this->load->model('userModel'); // load model/Incarcam,modelul postModel.
     }
 
     public function index()
     {
-        $data['posts'] = $this->postModel->getPosts(); // calling Post model method getPosts()/ Apel la functia getPosts();
+        $data['posts'] = $this->userModel->getPosts(); // calling Post model method getPosts()/ Apel la functia getPosts();
 
         $this->load->view('home_view', $data); // load the view file , we are passing $data array to view file//incarca file view, incarcam $data la view-ul "home_view";
     }
 
     public function delete($post_id = NULL)
     {
-        $this->postModel->delete_post($post_id);
+    {
+        $this->userModel->delete_post($post_id);
 
         redirect('/home', 'refresh');
     }
@@ -39,9 +40,9 @@ class Post extends CI_Controller
 
     //Edit funtion/Functia de edit.
     public function edit($post_id = NULL){
-        $data['posts'] = $this->postModel->getPosts($this->session->userdata('username'));
+        $data['posts'] = $this->userModel->getPosts($this->session->userdata('username'));
 
-        $data['jurnal_edit']=$this->postModel->edit_post($post_id);
+        $data['jurnal_edit']=$this->userModel->edit_post($post_id);
         $data['id']=$post_id;
 
         $this->load->view('home_edit_view',$data);

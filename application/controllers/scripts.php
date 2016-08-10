@@ -69,7 +69,7 @@ class Scripts extends CI_Controller
         $journal_title=$this->input->post('journal-title');
         $share=$this->input->post('share');
         $this->load->model('postModel');
-        $this->postModel->update_posts($id,$journal_text,$journal_title,$share);
+        $this->userModel->update_posts($id,$journal_text,$journal_title,$share);
         redirect('/home','refresh');
 
 
