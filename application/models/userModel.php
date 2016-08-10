@@ -36,6 +36,27 @@ Class UserModel extends CI_Model
         return $data[0]['avatar'];
 
     }
+            function delete_account($username)
+            {
+                $this->db->where('username', $username);
+                $this->db->delete('members');
+
+
+
+            }
+            function delete_journals($username)
+            {
+                $this->db->where('username',$username);
+                $this->db->deletE('journals');
+            }
+            function update_avatar($username) {
+                $this->db->where('username',$username);
+                $this->db->set('avatar','1');
+                $this->db->update('members');
+            }
+
+
+
 }
 
 ?>

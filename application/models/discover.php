@@ -23,6 +23,7 @@ class Discover extends CI_Model
         return $result->num_rows();
     }
 
+
 }
 
 ?>

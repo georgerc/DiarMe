@@ -32,7 +32,14 @@ a:hover {
 .userbar {
 	width: 100%
 }
-
+#search {
+	color:Black;
+	width:90%;
+	margin:0 auto;
+	height:30px;
+	outline:none;
+	border:none;
+}
 #toggler:before {
     content:"";
     position: absolute;

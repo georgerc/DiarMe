@@ -500,7 +500,7 @@ foreach ($posts as $post) {
                             <option value="40px">40px</option>
                         </select>
 
-                        <input class="w3-input jscolor {onFineChange:'setTextColorModal<?php echo $post->id ?>(this)'}" value="000000" style="margin:0 auto;width:33.333%">
+                        <input disabled class="w3-input jscolor {onFineChange:'setTextColorModal<?php echo $post->id ?>(this)'}" value="000000" style="margin:0 auto;width:33.333%">
                     </div>
                 </div>
             </div>
@@ -521,7 +521,7 @@ foreach ($posts as $post) {
 
     <div class="w3-right w3-padding-right">
         <button id="buton-trimitere" class="w3-btn" type="button"name="trimitere" value="Submit" data-toggle="modal"
-                data-target="#myModal" style="position:fixed;bottom:10px;right:15%;color:white;background-color:#43474D;">Submit
+                data-target="#myModal" style="position:fixed;bottom:10px;color:white;background-color:#43474D;">Submit
         </button>
     </div>
 
@@ -631,12 +631,29 @@ foreach ($posts as $post) {
                         <br>
                         <?php echo "<input class='w3-btn w3-hover-white' type='submit' name='submit' value='Upload' /> "; ?>
                         <br>
+                        <br>
+                        <br>
+                        <br>
 
+                        <?php echo form_close() ?>
 
                         <?php echo $this->session->flashdata('upld_img'); ?>
-                        <?php echo "</form>" ?>
+                        <br><br><br>
+                        </div>
 
+                    <div style="width:100%;height:50px">
+                        <a href="<?php echo base_url(); ?>scripts/delete_all_C ">
+                            <button type="button"  class='w3-btn w3-hover-white w3-third'
+                                    style="float:left;height:35px;border:none;outline:none;margin-left:10px;">Delete account
+                            </button></a>
+
+                            <a href="<?php echo base_url();?>scripts/delete_journals_C">
+                                <button type="button"  class='w3-btn w3-hover-white w3-third'
+                                        style="float:left;height:35px;border:none;outline:none;margin-left:10px;">Delete journals
+                                </button></a>
                     </div>
+                    <p style="color:red;font-size:20px;margin-top:20px;float:left">Warning! These changes are not reversible!</p>
+
                 </div>
 
 

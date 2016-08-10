@@ -79,6 +79,28 @@ class Scripts extends CI_Controller
     {
         $this->load->view('discover_view');
     }
+    public function delete_all_C()
+    {
+            $this->load->model('userModel');
+            $this->userModel->delete_account($this->session->userdata('username'));
+            $this->userModel->delete_journals($this->session->userdata('username'));
+            $this->session->unset_userdata('logged_in');
+             session_destroy();
+            $this->load->view('login_view');
+
+    }
+    public function delete_journals_C()
+    {
+        $this->load->model('userModel');
+
+        $this->userModel->delete_journals($this->session->userdata('username'));
+
+        redirect('/home','refresh');
+
+    }
+
+
+
 
 }
 

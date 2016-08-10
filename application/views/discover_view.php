@@ -24,11 +24,14 @@
 
 <body style="font-family:raleway;min-height: 94.79999vh">
 
-
+<!-- USER BAR -->
 <div class="w3-animate-right w3-card-8 w3-row w3-center userbar"
      style="background-color:rgba(143,143,143, 0.7);color:white;height:110px;">
     <br>
-    <p style="font-size:20px">Browsing as: <span style="color:#00ADB5"><?php echo $this->session->userdata('username'); ?></span></p>
+    <p style="font-size:20px;">Browsing as: <span
+            style="color:#00ADB5"><?php echo $this->session->userdata('username'); ?></span></p>
+
+
     <button onclick="location.href = '<?php echo base_url() ?>home'" class="w3-btn w3-hover-white"
             style="width:35%">Home
     </button>
@@ -36,8 +39,8 @@
             style="width:35%">Sign Out
     </button>
 </div>
-
-
+<!-- END USER BAR -->
+<!-- JOURNAL LIST -->
 <div>
 
     <div class="journal-list w3-animate-zoom">
@@ -45,15 +48,15 @@
         <?php $k = 6 * ($page - 1) + 1;
         foreach ($posts as $post) {
             ?>
-            <div class="journal-entry" >
+            <div class="journal-entry">
                 <img class="w3-card-4 w3-circle" <?php echo $this->session->userdata('avatar') ?>
-                     src="<?php echo base_url(); ?>uploads/<?php if($this->session->userdata('avatar')==='1'    ) echo $post->username.'.jpg';
+                     src="<?php echo base_url(); ?>uploads/<?php if ($this->session->userdata('avatar') === '1') echo $post->username . '.jpg';
 
                      ?>"
                      style="width:80px;height:80px;position:relative;left:-120px;top:72px;">
                 <div id="toggler">
 
-                    <span class="entry-number"><?php echo $k.".";
+                    <span class="entry-number"><?php echo $k . ".";
                         $k++ ?> </span>
 
                     <span class="journal-title"><?php echo $post->journal_title ?> </span>
@@ -67,16 +70,16 @@
 
                     <div class="journal-footer" style="background-color: #00ADB5;text-align:right">
                         <span class="username">By: <?php echo $post->username ?></span>
-                        <span >on <?php echo $post->odata ?></span>
+                        <span>on <?php echo $post->odata ?></span>
                     </div>
 
                 </div>
 
 
-
             </div>
         <?php } ?>
-
+<!-- END JOURNAL LIST -->
+        <!-- PAGINATION -->
         <div class="w3-center" style="width:100%">
             <?php
             if ($result < 7) echo '<a href="' . base_url() . 'post/discover/1" id="1" class="pagination w3-center">1</a>';
@@ -108,15 +111,16 @@
                         }
 
                     } else {
-                                for ($i = $page - 2; $i <= $page + 2; $i++) {
-                                    if($i < ceil($result/6)+1)
-                                         echo '<a href="' . base_url() . 'post/discover/' . $i . '" id="' . $i . '" class="pagination w3-center">' . $i . '</a>';
+                        for ($i = $page - 2; $i <= $page + 2; $i++) {
+                            if ($i < ceil($result / 6) + 1)
+                                echo '<a href="' . base_url() . 'post/discover/' . $i . '" id="' . $i . '" class="pagination w3-center">' . $i . '</a>';
 
-                                }
+                        }
                     }
                 }
 
             ?>
+            <!-- END PAGINATION -->
         </div>
 
     </div>

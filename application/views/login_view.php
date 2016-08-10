@@ -17,13 +17,13 @@
 
     </style>
 </head>
-<body >
-<div class="w3-container w3-center login-box " >
+<body>
+<div class="w3-container w3-center login-box ">
 
     <p id="intro-text">"Make your memories immortal"<br>
         Write your stories and never forget them</p><br>
 
-    <div class="w3-third  w3-card-8" style="width:80%;background-color: rgba(0,0,0,0.6);position:relative;left:10%">
+    <div class="w3-third  w3-card-8" style="width:84%;background-color: rgba(0,0,0,0.6);position:relative;left:8%">
         <br>
         <div class="formular-children  w3-margin ">
 
@@ -46,7 +46,7 @@
         <div class="w3-row w3-center" style="width:77%;margin: 0 auto;">
 
             <input id="buton_logare" class="w3-btn w3-padding w3-hover-white" name="submit" type="submit"
-                   value=" Login ">
+                   value=" Login " style="width:100%">
 
             <?php echo validation_errors() ?>
         </div>
@@ -55,20 +55,20 @@
 
         <br> <br>
 
-        <div class="w3-row" style="width:70%;margin:0 auto">
+        <div class="w3-row" style="width:77%;margin:0 auto">
 
             <div class="w3-row ">
 
                 <div class=" w3-center w3-margin-bottom test123">
                     <button type="button" data-toggle="modal" data-target="#myModal2"
-                            class="w3-btn  w3-padding w3-hover-white" style="float:left;">Forgot your password?
+                            class="w3-btn  w3-padding w3-hover-white">Forgot your password?
                     </button>
                 </div>
 
                 <div class=" w3-center  w3-margin-bottom test123 test1234">
                     <button type="button" data-toggle="modal" data-target="#myModal"
-                            class="w3-btn  w3-hover-white w3-padding " >
-                       Create a new account
+                            class="w3-btn  w3-hover-white w3-padding ">
+                        Create a new account
                     </button>
                 </div>
 
@@ -90,7 +90,6 @@
 <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
 
-        <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -144,7 +143,6 @@
 <div class="modal fade" id="myModal2" role="dialog">
     <div class="modal-dialog">
 
-        <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -152,19 +150,19 @@
             </div>
             <div class="modal-body " style="padding:0;margin:0">
                 <div id="Demo2" class="caseta-modala w3-container w3-animate-zoom" style="margin:auto">
-                        <br>
+                    <br>
 
-                        <p>
-                            <?php echo form_open('forgot_password_C/reset_password') ?>
-                            <label>Email</label>
-                            <input class="w3-input w3-border" type="email" name="email" required>
-                        </p>
-                        <br>
-                        <p>
-                            <input type="submit" name="submit" class="w3-btn-block w3-black w3-hover-red" onclick="changeModal()">Change password</button>
-                        </p>
-                        <?php echo form_close() ?>
-                    <p class="w3-animate-zoom" id="mesaj" style="display:none;font-size:20px;">An email has been sent to the specified address.</p>
+                    <p>
+                        <?php echo form_open('forgot_password_C/reset_password') ?>
+                        <label>Email</label>
+                        <input class="w3-input w3-border" type="email" name="email" required>
+                    </p>
+                    <br>
+                    <p>
+                        <input type="submit" name="submit" class="w3-btn-block w3-black w3-hover-red"
+                               value="Change password"></button>
+                    </p>
+                    <?php echo form_close() ?>
                 </div>
 
             </div>
@@ -186,15 +184,7 @@
 
 </style>
 
-<script>
-function changeModal() {
-      document.getElementById("test12").style.display="none";
-      document.getElementById("mesaj").style.display="block";
 
-}
 
-</script>
-
-        
 </body>
 </html>

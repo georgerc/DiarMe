@@ -7,7 +7,10 @@ body {
 #importantstuff {
     width: 100%;
 }
-
+#buton-trimitere,#buton-edit {
+    width:50%;
+    right:25%;
+}
 .side-bar {
     width:100%;
     background-color: #EEEEEE;
@@ -128,6 +131,10 @@ textarea {
         margin-left: auto;
         margin-right: auto;
     }
+    #buton-trimitere,#buton-edit {
+        width: 30%;
+        right:35%;
+    }
     .side-bar {
         width:250px;
     }
@@ -161,6 +168,10 @@ textarea {
     textarea {
         height:80%;
 
+    }
+    #buton-trimitere,#buton-edit {
+        width:20%;
+        right:40%;
     }
     a {
         font-size: 16.5px;

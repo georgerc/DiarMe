@@ -1,6 +1,5 @@
 body {
-    background: url("../img/nightstars.jpg")no-repeat center center fixed;
-
+    background:url('../img/background.png') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -91,12 +90,13 @@ body  {
 
 }
 .test123 {
-    width: 90%;
+    width: 100%;
     float:left;
-    margin-left: 0;
+    margin:0 auto;
 }
 .test1234 {
     margin-left: 0;
+    width:100%;
 }
 @media only screen and (min-width:601px) {
 .login-box {
@@ -115,7 +115,7 @@ body  {
     width:45%;height:35px;
 }
 .test1234 {
-    margin-left:1%;float:right;
+    margin-left:1%;float:right;margin-right:0
 }
 }
 

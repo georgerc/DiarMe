@@ -13,13 +13,14 @@ public function index()
             'allowed_types' => "jpg",
             'overwrite' => TRUE,
             'file_name' => $this->session->userdata('username')
-
         );
+        $this->load->model('userModel');
         $this->load->library('upload', $config);
         if($this->upload->do_upload())
         {
             $this->session->set_flashdata('upld_img',"<div style='color:green;'>Image uploaded successfully,please refresh the page to see the changes. .</div>");
             $data = array('upload_data' => $this->upload->data());
+            $this->userModel->update_avatar($this->session->userdata('username'));
             $this->session->set_userdata('avatar','1');
             redirect('/home','refresh:3 ');
         }
