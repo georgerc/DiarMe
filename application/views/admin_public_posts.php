@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url() ?>js/readmore.min.js"></script>
+
 </head>
 <body>
 <nav class="navbar navbar-inverse">
@@ -53,7 +55,7 @@
             <tr>
                 <td><?php echo $p_journals['username'] ?></td>
                 <td><?php echo $p_journals['journal_title'] ?></td>
-                <td><?php echo $p_journals['journal_text'] ?></td>
+                <td class="journal-text"><?php echo $p_journals['journal_text'] ?></td>
 
             </tr>
         <?php } ?>
@@ -61,6 +63,13 @@
         </tbody>
     </table>
 </div>
+<script>
 
+    $('.journal-text').readmore({
+        speed: 125,
+        collapsedHeight: 50,
+        lessLink: '<a href="#">Read less</a>'
+    });
+</script>
 </body>
 </html>

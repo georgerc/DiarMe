@@ -37,7 +37,7 @@ Class AdminModel extends CI_Model
     {
         $this->db->select("journal_title,username,journal_text,odata,id");
         $this->db->from('journals');
-        $this->db->where('share','1');
+        $this->db->where('share','0');
         $this->db->order_by("odata", "desc");
         $query = $this->db->get();
         return $query->result_array();
