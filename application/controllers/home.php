@@ -1,5 +1,7 @@
 <?php
-class Home extends CI_Controller {
+
+class Home extends CI_Controller
+{
 
     function __construct()
     {
@@ -8,19 +10,32 @@ class Home extends CI_Controller {
 
     public function index()
     {
-        if($this->session->userdata('logged_in') === True)
-        {
+        if ($this->session->userdata('logged_in') === True) {
+            $this->load->model('userModel');
+            $this->load->model('adminModel');
             $session_data = $this->session->userdata('logged_in');
+            $username = $this->session->userdata('username');
+            $admin = $this->adminModel->get_admin($username);
+            $suspended = $this->adminModel->get_suspended($username);
             $this->load->model('userModel'); // load model
             $data['posts'] = $this->userModel->getPosts($this->session->userdata('username'));
             $data['username'] = $session_data['username'];
-            $data['avatar']=$this->userModel->getAvatar($this->session->userdata('username'));
-            $this->load->view('home_view', $data);
-        }
-        else
+            $data['avatar'] = $this->userModel->getAvatar($this->session->userdata('username'));
+            if ($admin == '1') {
+                redirect('admin');
+            } else {
+                if ($suspended == '1') {
+                    $this->load->view('suspended_view');
+                } else {
+                    $this->load->view('home_view', $data);
+                }
+            }
+
+
+        } else
             //If no session, redirect to login page
-             $this->load->view('login_view');
-        }
+            $this->load->view('login_view');
+    }
 
 
     function logout()
