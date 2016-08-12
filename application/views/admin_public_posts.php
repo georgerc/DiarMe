@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <link rel="icon" href="<?php echo base_url() ?>img/logo.ico" type="image/x-icon"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="<?php echo base_url() ?>css/bootstrap.min.css"/>
+    <script src="<?php echo base_url() ?>js/jquery.min.js"></script>
+    <script src="<?php echo base_url() ?>js/bootstrap.min.js"></script>
     <script src="<?php echo base_url() ?>js/readmore.min.js"></script>
 
 </head>
@@ -59,8 +59,8 @@
                 <td><?php echo $p_journals['username'] ?></td>
                 <td><?php echo $p_journals['journal_title'] ?></td>
                 <td class="journal-text"><?php echo $p_journals['journal_text'] ?></td>
-                <td><?php echo '<a href="' . base_url() . 'admin/' . 'suspend_user/' . '"> <button type="button" id="suspend" >Delete</button></a>'; ?>
-                  <?php  echo '<a href="' . base_url() . 'admin/' . 'suspend_user/' . '"> <button type="button" id="suspend" style="margin-top:10px;" >Warning</button></a>'; ?>
+                <td><?php echo '<a href="' . base_url() . 'admin/' . 'suspend_user/' . '"> <button class="btn btn-primary" type="button" id="suspend" >Delete</button></a>'; ?>
+                  <?php  echo '<a href="' . base_url() . 'admin/' . 'suspend_user/' . '"> <button class="btn btn-primary" type="button" id="suspend" style="margin-top:10px;" >Warning</button></a>'; ?>
                 </td>
             </tr>
         <?php } ?>
@@ -68,11 +68,17 @@
         </tbody>
     </table>
 </div>
+
+
+
+
+
+
 <script>
 
     $('.journal-text').readmore({
         speed: 125,
-        collapsedHeight: 50,
+        collapsedHeight: 80,
         lessLink: '<a href="#">Read less</a>'
     });
 </script>
