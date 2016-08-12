@@ -49,6 +49,7 @@
             <th>User Picture</th>
             <th>Username:</th>
             <th>Email</th>
+            <th>Actions</th>
         </tr>
         </thead>
         <tbody>
@@ -66,10 +67,10 @@
                     } ?></td>
                 <td><?php echo $user['email'];
                     echo '<a href="' . base_url() . 'admin/' . 'suspend_user/' . $user["id"] . '"> <button type="button" id="suspend" >Write Message </button></a>'; ?></td>
-
+                <td><?php echo '<a href="' . base_url() . 'admin/' . 'delete_userC/' . $user["username"] . '"> <button type="button" id="suspend" >Delete Account</button></a>';
+                    echo '<a href="' . base_url() . 'admin/' . 'rename_userCd/' . $user["username"] . '"> <button type="button" id="suspend" >Rename</button></a>'; ?></td>
             </tr>
         <?php } ?>
-
         </tbody>
     </table>
 </div>

@@ -30,11 +30,13 @@ class Admin extends CI_Controller
         $this->load->view('admin_public_posts', $data);
     }
 
-    public function suspend_user($post_id = NULL){
+    public function suspend_user($post_id = NULL)
+    {
         $this->load->model('adminModel');
         $this->adminModel->suspend_user($post_id);
         redirect('admin/users');
     }
+
     public function resume_user($post_id = NULL)
     {
         $this->load->model('adminModel');
@@ -42,5 +44,18 @@ class Admin extends CI_Controller
         redirect('admin/users');
     }
 
+    public function delete_userC($post_username = NULL)
+    {
+        $this->load->model('adminModel');
+        $this->adminModel->delete_user($post_username);;
+        redirect('admin/users');
+    }
 
+    public function rename_userC($post_username = NULL)
+    {
+        $this->load->model('adminModel');
+        $this->adminModel->rename_user($post_username);;
+        redirect('admin/users');
+
+    }
 }

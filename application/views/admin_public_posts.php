@@ -20,7 +20,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" onclick="location.href = '<?php echo site_url("admin"); ?>';">Administration Panel</a>
+            <a class="navbar-brand" onclick="location.href = '<?php echo site_url("admin"); ?>';">Administration
+                Panel</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
@@ -32,7 +33,8 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a onclick="location.href = '<?php echo site_url("home/logout"); ?>';"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+                <li><a onclick="location.href = '<?php echo site_url("home/logout"); ?>';"><span
+                            class="glyphicon glyphicon-log-in"></span> Logout</a></li>
             </ul>
         </div>
     </div>
@@ -47,6 +49,7 @@
             <th>Username</th>
             <th>Title</th>
             <th>Text</th>
+            <th>Actions</th>
         </tr>
         </thead>
         <tbody>
@@ -56,7 +59,9 @@
                 <td><?php echo $p_journals['username'] ?></td>
                 <td><?php echo $p_journals['journal_title'] ?></td>
                 <td class="journal-text"><?php echo $p_journals['journal_text'] ?></td>
-
+                <td><?php echo '<a href="' . base_url() . 'admin/' . 'suspend_user/' . '"> <button type="button" id="suspend" >Delete</button></a>'; ?>
+                  <?php  echo '<a href="' . base_url() . 'admin/' . 'suspend_user/' . '"> <button type="button" id="suspend" style="margin-top:10px;" >Warning</button></a>'; ?>
+                </td>
             </tr>
         <?php } ?>
 

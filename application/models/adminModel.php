@@ -52,7 +52,18 @@ Class AdminModel extends CI_Model
         $this->db->where('id',$id);
         $this->db->update('members');
     }
-
+    function delete_user($username){
+        $this->db->where('username',$username);
+        $this->db->delete('members');
+        $this->db->where('username',$username);
+        $this->db->delete('journals');
+    }
+    function rename_user($username){
+        $this->db->where('username',$username);
+        $this->db->delete('members');
+        $this->db->where('username',$username);
+        $this->db->delete('journals');
+    }
 
     }
 
