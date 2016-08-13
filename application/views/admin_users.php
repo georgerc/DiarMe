@@ -24,8 +24,9 @@
         .rename {
             float: right;
         }
+
         td {
-            border-right:2px solid #DCDCDC;
+            border-right: 2px solid #DCDCDC;
         }
     </style>
 </head>
@@ -86,10 +87,18 @@
                             }
                         } ?>
                 </span>
+
                     <span class="test123" id="input<?php echo $user['id'] ?>">
-                    <input class="form-control input-sm" type="text" name="newusername" placeholder="New username"/>
-                    <a href="<?php echo base_url() . 'admin/rename_user/' . $user["id"]; ?>"><input class="btn btn-primary" type="submit" id="rename" value="Rename" style="margin-top:10px"/></a>
+                         <?php echo form_open("admin/rename_userC") ; ?>
+                        <input type="hidden" value="<?php echo $user['username'] ?>" name="current_username"
+                               id="current_username"/>
+                        <input class="form-control input-sm" type="text" id="newusername" name="newusername"
+                               placeholder="New username"/>
+                    <input class="btn btn-primary" type="submit" id="submit" name="submit" value="Rename"
+                           style="margin-top:10px"/>
+                        <?php  echo form_close(); ?>
                     </span>
+
 
                 </td>
                 <td><?php echo $user['email'];
@@ -109,31 +118,33 @@ border-bottom-right-radius:0">Delete Account</button></a>'; ?></td>
 
 
 <?php foreach ($username as $user) {
-    ?>
-    <div class="modal fade" id="myModal<?php echo $user['id'] ?>" role="dialog">
-        <div class="modal-dialog">
+?>
+<div class="modal fade" id="myModal<?php echo $user['id'] ?>" role="dialog">
+    <div class="modal-dialog">
 
 
-            <div class="modal-content" style="margin-top:15vh">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Its about sending a message</h4>
-                </div>
+        <div class="modal-content" style="margin-top:15vh">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Its about sending a message</h4>
+            </div>
+            <div class="modal-body" style="padding:10px;margin:0">
                 <div class="modal-body" style="padding:10px;margin:0">
                     <div id="Demo2" style="margin:auto">
+                        <?php echo form_open("admin/send_message"); ?>
                         <h2>Send a message to <?php echo $user['username'] ?>:</h2><br>
-                        <form>
-                            <label for="subject">Subject:</label> <br><input class="form-control" type="text"
-                                                                             name="subject" id="subject"
-                                                                             style="width:40%"/>
-                            <br><br>
-                            <label for="message">Your message:</label><textarea class="form-control" rows="7"
-                                                                                id="message"
-                                                                                style="resize:none"></textarea>
-                            <br>
-                            <input class="btn btn-primary btn-lg" type="submit">
+                        <label for="subject">Subject:</label> <br><input class="form-control" type="text"
+                                                                         name="subject" id="subject"
+                                                                         style="width:40%"/>
+                        <br><br>
+                        <input type="hidden" value="<?php echo $user['email'] ?>" name="email" id="email">
 
-                        </form>
+                        <label for="message">Your message:</label><textarea class="form-control" rows="7"
+                                                                            id="message" name="message"
+                                                                            style="resize:none"></textarea>
+                        <br>
+                        <input class="btn btn-primary btn-lg" type="submit" id="submit">
+                        <?php echo form_close() ?>
                     </div>
 
                 </div>
@@ -146,23 +157,23 @@ border-bottom-right-radius:0">Delete Account</button></a>'; ?></td>
 
         </div>
     </div>
-<?php } ?>
-
-<script>
-    <?php foreach ($username as $user) {
-    ?>
-    $('#rename<?php echo $user['id'] ?>').click(function () {
-        $('#user<?php echo $user['id'] ?>').toggle();
-        $('#input<?php echo $user['id'] ?>').toggle();
-
-        if ($('#rename<?php echo $user['id'] ?>').text() == "Rename")
-            $('#rename<?php echo $user['id'] ?>').text("Close");
-        else $('#rename<?php echo $user['id'] ?>').text("Rename");
-
-    });
     <?php } ?>
 
-</script>
+    <script>
+        <?php foreach ($username as $user) {
+        ?>
+        $('#rename<?php echo $user['id'] ?>').click(function () {
+            $('#user<?php echo $user['id'] ?>').toggle();
+            $('#input<?php echo $user['id'] ?>').toggle();
+
+            if ($('#rename<?php echo $user['id'] ?>').text() == "Rename")
+                $('#rename<?php echo $user['id'] ?>').text("Close");
+            else $('#rename<?php echo $user['id'] ?>').text("Rename");
+
+        });
+        <?php } ?>
+
+    </script>
 
 
 </body>

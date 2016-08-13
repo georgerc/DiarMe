@@ -51,11 +51,29 @@ class Admin extends CI_Controller
         redirect('admin/users');
     }
 
-    public function rename_userC($post_username = NULL)
+    public function rename_userC()
     {
         $this->load->model('adminModel');
-        $this->adminModel->rename_user($post_username);;
+        $current_username=$this->input->post('current_username');
+        $new_username=$this->input->post('newusername');
+        $this->adminModel->rename_user($new_username,$current_username);;
         redirect('admin/users');
 
+    }
+
+    public function send_message()
+    {
+        $this->load->library('email');
+        $this->email->set_mailtype('html');
+        $this->email->from($this->config->item('bot_email'), 'DiarMe');
+        $this->email->to($this->input->post('email'));
+        $this->email->subject($this->input->post('subject'));
+        $message = '<!DOCTYPE html <meta http-equiv="Content-Type" content="text/html";charset=utf-8" /></head><body>';
+        $message_post=$this->input->post('message');
+        $message .='<p>'.$message_post.'</p>';
+        $message .='</body></html>';
+        $this->email->message($message);
+        $this->email->send();
+        redirect('admin/users');
     }
 }
