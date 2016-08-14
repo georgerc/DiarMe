@@ -5,10 +5,11 @@
     <meta charset="utf-8">
     <link rel="icon" href="<?php echo base_url() ?>img/logo.ico" type="image/x-icon"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="<?php echo base_url() ?>css/bootstrap.min.css"/>
-    <script src="<?php echo base_url() ?>js/jquery.min.js"></script>
-    <script src="<?php echo base_url() ?>js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
+
         .test123 {
             display: none;
         }
@@ -17,17 +18,11 @@
             font-size: 17px;
         }
 
-        #suspend, #delete, #rename {
-            float: right
+
+        .suspendare button {
+            float:right
         }
 
-        .rename {
-            float: right;
-        }
-
-        td {
-            border-right: 2px solid #DCDCDC;
-        }
     </style>
 </head>
 <body>
@@ -62,23 +57,24 @@
     </div>
 </nav>
 
-<div class="container">
+<div class="container-fluid">
+
+<div class="container col-md-6" id="lista-useri">
     <table class="table table-hover-red">
         <thead>
         <tr>
 
-            <th style="text-align:center">User Picture</th>
             <th style="text-align:center">Username:</th>
             <th style="text-align:center">Email</th>
-            <th style="text-align: right">Actions</th>
+            <th style="text-align: center">Actions</th>
         </tr>
         </thead>
         <tbody>
         <?php foreach ($username as $user) {
             ?>
             <tr>
-                <td style="border-left:2px solid #DCDCDC;">------</td>
-                <td><span id="user<?php echo $user['id'] ?>"><?php echo $user['username'];
+
+                <td><span class="suspendare" id="user<?php echo $user['id'] ?>"><?php echo $user['username'];
                         if ($user['suspended'] == '0') {
                             echo '<a href="' . base_url() . 'admin/' . 'suspend_user/' . $user["id"] . '"> <button class="btn btn-primary" type="button" id="suspend" >Suspend user </button></a>';
                         } else {
@@ -101,19 +97,32 @@
 
 
                 </td>
-                <td><?php echo $user['email'];
-                    echo '<button class="btn btn-primary" type="button" id="suspend" data-toggle="modal" data-target="#myModal' . $user["id"] . '" >Write Message </button>'; ?></td>
-                <td><?php
-                    echo '<button class="rename btn btn-primary" type="button" id="rename' . $user['id'] . '"  style="border-top-left-radius:0;
-border-bottom-left-radius:0;">Rename</button>';
-                    echo '<a href="' . base_url() . 'admin/' . 'delete_userC/' . $user["username"] . '"> <button class="btn btn-primary" type="button" id="delete" style="border-top-right-radius:0;
-border-bottom-right-radius:0">Delete Account</button></a>'; ?></td>
+                <td style="border-right: 2px solid #DCDCDC;border-left:2px solid #DCDCDC"><?php echo $user['email'];
+                    echo '<button class="btn btn-primary" type="button" id="suspend" data-toggle="modal" data-target="#myModal' . $user["id"] . '" style="float:right">Write Message </button>'; ?></td>
+                <td class="btn-group" style="padding-right: 0">
+                  <?php
+                    echo '<button class="col-sm-3 rename btn btn-primary" type="button" id="rename' . $user['id'] . '" style="text-align:center;padding:6px 10px"  >Rename</button>';
+                    echo '<a href="' . base_url() . 'admin/' . 'delete_userC/' . $user["username"] . '"> <button class="col-sm-5 btn btn-primary" type="button" id="delete" style="border-radius:0;text-align:center;padding:6px 10px">Delete Account</button></a>'; ?>
+
+                    <button class="col-sm-4 btn btn-primary" type="button" style="text-align:center;padding:6px 10px">View Journals</button>
+
+                </td>
             </tr>
 
 
         <?php } ?>
         </tbody>
     </table>
+</div>
+
+
+    <div class="container col-md-6" style="background-color: yellow">
+
+       Aici ar trebui sa vina jurnalele
+
+    </div>
+
+
 </div>
 
 
@@ -174,6 +183,8 @@ border-bottom-right-radius:0">Delete Account</button></a>'; ?></td>
         <?php } ?>
 
     </script>
+
+
 
 
 </body>

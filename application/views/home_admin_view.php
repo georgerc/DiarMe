@@ -8,8 +8,21 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        .stats {
+            opacity:0;
+            text-align: center;
+            font-size:20px;
+
+
+            border-radius:20px;
+            color:white
+        }
+
+
+    </style>
 </head>
-<body>
+<body onload="startTime()">
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -35,5 +48,55 @@
         </div>
     </div>
 </nav>
+
+
+
+
+<div class="container">
+    <br>
+    <h1>Welcome to the admin page!</h1>
+    <h3>It is currently <span id="txt"></span>.</h3>
+    <h3>Here are some stats of our website:</h3>
+
+    <div class="col-md-4 stats">
+        <div class="col-md-9 stats" style="background-color:blue;margin-left:15%">Number of journals written:<br><span id="numar">64</span></div>
+    </div>
+
+    <div class="col-md-4 stats" >
+        <div class="col-md-9 stats" style="background-color:blue;margin-left:15%;">Number of registered accounts:<br><span id="numar">24</span></div>
+    </div>
+
+    <div class="col-md-4 stats" >
+        <div class="col-md-9 stats" style="background-color:blue;margin:15%">Number of shared journals:<br><span id="numar">24</span></div>
+    </div>
+
+</div>
+
+
+
+<script>
+    function startTime() {
+        var today = new Date();
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById('txt').innerHTML =
+            h + ":" + m + ":" + s;
+        var t = setTimeout(startTime, 500);
+    }
+    function checkTime(i) {
+        if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+        return i;
+    }
+    $(document).ready(function () {
+       $('.stats').animate({
+           top:'50px',
+           opacity:'1'
+       },600);
+    });
+
+</script>
 </body>
 </html>
