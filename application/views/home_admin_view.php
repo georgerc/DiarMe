@@ -18,7 +18,9 @@
             border-radius:20px;
             color:white
         }
-
+        .badge {
+            margin-left:5px;
+        }
 
     </style>
 </head>
@@ -34,13 +36,18 @@
             <a class="navbar-brand" onclick="location.href = '<?php echo site_url("admin"); ?>';">Administration Panel</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-                <li ><a onclick="location.href = '<?php echo site_url("admin/users"); ?>';">Users</a></li>
+            <ul class="nav navbar-nav ">
+                <li ><a onclick="location.href = '<?php echo site_url("admin/users"); ?>';">Users<span class="badge"><?php echo $count_users; ?></span></a></li>
                 <li class="dropdown">
-                    <a class="active" href="#">Announcements </a>
-                <li >
-                    <a class="active" onclick="location.href = '<?php echo site_url("admin/public_posts"); ?>';">Public Posts</a>
+
+                    <a class="active" onclick="location.href = '<?php echo site_url("admin/public_posts"); ?>';">Public Posts<span class="badge"><?php echo $count_public_posts ?></span></a>
                 </li>
+                <li >
+                    <a class="active" onclick="location.href = '<?php echo site_url("admin/warned_posts"); ?>';">Warned Posts<span class="badge"><?php echo $count_warned_posts ?></span></a>
+                </li>
+                <li class="dropdown">
+                <a class="active" href="#">Announcements </a>
+                <li >
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a onclick="location.href = '<?php echo site_url("home/logout"); ?>';"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
@@ -52,12 +59,13 @@
 
 
 
-<div class="container">
-    <br>
-    <h1>Welcome to the admin page!</h1>
-    <h3>It is currently <span id="txt"></span>.</h3>
-    <h3>Here are some stats of our website:</h3>
+<div class="container-fluid" style="text-align: center">
+    <h1>Welcome back,<?php echo $this->session->userdata('username')?>.</h1>
+    <h3>It is currently <span id="txt" style="color:red"></span>.</h3>
 
+
+<!--
+<h3>Here are some stats of our website:</h3>
     <div class="col-md-4 stats">
         <div class="col-md-9 stats" style="background-color:blue;margin-left:15%">Number of journals written:<br><span id="numar">64</span></div>
     </div>
@@ -69,6 +77,7 @@
     <div class="col-md-4 stats" >
         <div class="col-md-9 stats" style="background-color:blue;margin:15%">Number of shared journals:<br><span id="numar">24</span></div>
     </div>
+    -->
 
 </div>
 

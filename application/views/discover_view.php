@@ -18,6 +18,16 @@
             margin: 0 auto 0.5em auto;
         }
 
+        .journal-footer a {
+            float: left;
+            margin-left: 10px;
+            font-size: 20px;
+            color: black
+        }
+
+        .journal-footer a:hover {
+            color: red;
+        }
     </style>
 
 </head>
@@ -46,31 +56,33 @@
     <div class="journal-list w3-animate-zoom">
 
         <?php $k = 6 * ($page - 1) + 1;
+
         foreach ($posts as $post) {
             ?>
             <div class="journal-entry">
-                <img class="w3-card-4 w3-circle" <?php echo $this->session->userdata('avatar') ?>
-                     src="<?php echo base_url(); ?>uploads/<?php if ($this->session->userdata('avatar') === '1') echo $post->username . '.jpg';
-
-                     ?>"
+                <img class="w3-card-4" <?php echo $this->session->userdata('avatar') ?>
+                     src="<?php echo base_url(); ?><?php echo $post->img_path  ?>"
                      style="width:80px;height:80px;position:relative;left:-120px;top:72px;">
                 <div id="toggler">
 
                     <span class="entry-number"><?php echo $k . ".";
                         $k++ ?> </span>
 
-                    <span class="journal-title"><?php echo $post->journal_title ?> </span>
+                    <span class="journal-title" style="white-space:pre-line"><?php echo $post->journal_title ?> </span>
 
 
                 </div>
 
 
                 <div class="journal-text">
-                    <?php echo $post->journal_text ?>
+                   <span class="text-jurnal"> <?php echo $post->journal_text ?></span>
 
-                    <div class="journal-footer" style="background-color: #00ADB5;text-align:right">
+                    <div class="journal-footer"
+                         style="background-color: #00ADB5;text-align:right;border-bottom-left-radius: 10px;border-bottom-right-radius: 10px">
+                        <a href="<?php echo base_url() . 'user/comments/' . $post->id . '/' . $post->journal_title; ?>">View
+                            comments</a>
                         <span class="username">By: <?php echo $post->username ?></span>
-                        <span>on <?php echo $post->odata ?></span>
+                        <span style="margin-right:15px">on <?php echo $post->odata ?></span>
                     </div>
 
                 </div>
@@ -78,28 +90,28 @@
 
             </div>
         <?php } ?>
-<!-- END JOURNAL LIST -->
+        <!-- END JOURNAL LIST -->
         <!-- PAGINATION -->
         <div class="w3-center" style="width:100%">
             <?php
-            if ($result < 7) echo '<a href="' . base_url() . 'post/discover/1" id="1" class="pagination w3-center">1</a>';
+            if ($result < 7) echo '<a href="' . base_url() . 'user/discover/1" id="1" class="pagination w3-center">1</a>';
             else if ($result < 13) {
-                echo '<a href="' . base_url() . 'post/discover/1" id="1" class="pagination w3-center">1</a>';
-                echo '<a href="' . base_url() . 'post/discover/2" id="2" class="pagination w3-center">2</a>';
+                echo '<a href="' . base_url() . 'user/discover/1" id="1" class="pagination w3-center">1</a>';
+                echo '<a href="' . base_url() . 'user/discover/2" id="2" class="pagination w3-center">2</a>';
             } else if ($result < 19) {
-                echo '<a href="' . base_url() . 'post/discover/1" id="1" class="pagination w3-center">1</a>';
-                echo '<a href="' . base_url() . 'post/discover/2" id="2" class="pagination w3-center">2</a>';
-                echo '<a href="' . base_url() . 'post/discover/3" id="3" class="pagination w3-center">3</a>';
+                echo '<a href="' . base_url() . 'user/discover/1" id="1" class="pagination w3-center">1</a>';
+                echo '<a href="' . base_url() . 'user/discover/2" id="2" class="pagination w3-center">2</a>';
+                echo '<a href="' . base_url() . 'user/discover/3" id="3" class="pagination w3-center">3</a>';
             } else if ($result < 25) {
-                echo '<a href="' . base_url() . 'post/discover/1" id="1" class="pagination w3-center">1</a>';
-                echo '<a href="' . base_url() . 'post/discover/2" id="2" class="pagination w3-center">2</a>';
-                echo '<a href="' . base_url() . 'post/discover/3" id="3" class="pagination w3-center">3</a>';
-                echo '<a href="' . base_url() . 'post/discover/4" id="4" class="pagination w3-center">4</a>';
+                echo '<a href="' . base_url() . 'user/discover/1" id="1" class="pagination w3-center">1</a>';
+                echo '<a href="' . base_url() . 'user/discover/2" id="2" class="pagination w3-center">2</a>';
+                echo '<a href="' . base_url() . 'user/discover/3" id="3" class="pagination w3-center">3</a>';
+                echo '<a href="' . base_url() . 'user/discover/4" id="4" class="pagination w3-center">4</a>';
             } else
                 if ($page === '1') {
 
                     for ($i = $page; $i <= $page + 4; $i++) {
-                        echo '<a href="' . base_url() . 'post/discover/' . $i . '" id="' . $i . '" class="pagination w3-center">' . $i . '</a>';
+                        echo '<a href="' . base_url() . 'user/discover/' . $i . '" id="' . $i . '" class="pagination w3-center">' . $i . '</a>';
 
                     }
                 } else {
@@ -107,13 +119,13 @@
                     if ($page === '2') {
 
                         for ($i = $page - 1; $i <= $page + 3; $i++) {
-                            echo '<a href="' . base_url() . 'post/discover/' . $i . '" id="' . $i . '" class="pagination w3-center">' . $i . '</a>';
+                            echo '<a href="' . base_url() . 'user/discover/' . $i . '" id="' . $i . '" class="pagination w3-center">' . $i . '</a>';
                         }
 
                     } else {
                         for ($i = $page - 2; $i <= $page + 2; $i++) {
                             if ($i < ceil($result / 6) + 1)
-                                echo '<a href="' . base_url() . 'post/discover/' . $i . '" id="' . $i . '" class="pagination w3-center">' . $i . '</a>';
+                                echo '<a href="' . base_url() . 'user/discover/' . $i . '" id="' . $i . '" class="pagination w3-center">' . $i . '</a>';
 
                         }
                     }
@@ -129,7 +141,7 @@
 </div>
 
 </div>
-
+<!-- END PAGE -->
 
 <script type="text/javascript">
     $('#toggler span,img').click(function () {

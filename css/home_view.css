@@ -86,6 +86,8 @@ textarea {
     resize:none;
     outline: none;
 }
+
+
 ::-webkit-scrollbar {
     width: 12px;
 }
@@ -99,7 +101,6 @@ textarea {
 ::-webkit-scrollbar-thumb:hover {
     background-color: #bbb;
 }
-
 
 #customization {
     width: 99.9999%;
@@ -118,14 +119,30 @@ textarea {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     padding: 12px 16px;
 }
+.warnings-btn {
+    position:absolute;
+    width:40px;
+    height:50px;
+    right:19%;
+    outline:none;
+    border:none;
 
-
+}
+.warnings-div {
+    text-align:center;
+    font-size:22px;
+}
+.warn-list-item {
+    font-size:16px;
+    text-align:justify;
+}
 #bara-user-large {
     display: none;
 }
 #bara-user-medium {
     display: none;
 }
+
 @media only screen and (min-width:601px) {
     #notebook_page {
         margin-left: auto;
@@ -134,6 +151,9 @@ textarea {
     #buton-trimitere,#buton-edit {
         width: 30%;
         right:35%;
+    }
+    .poza-profil {
+        display:none;
     }
     .side-bar {
         width:250px;

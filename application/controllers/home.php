@@ -7,7 +7,7 @@ class Home extends CI_Controller
     {
         parent::__construct();
     }
-
+/*Verifica care user este admin si care user este utilizator si incarca View-ul potrivit.*/
     public function index()
     {
         if ($this->session->userdata('logged_in') === True) {
@@ -17,11 +17,11 @@ class Home extends CI_Controller
             $username = $this->session->userdata('username');
             $admin = $this->adminModel->get_admin($username);
             $suspended = $this->adminModel->get_suspended($username);
-            $this->load->model('userModel'); // load model
             $data['posts'] = $this->userModel->getPosts($this->session->userdata('username'));
             $data['username'] = $session_data['username'];
             $data['avatar'] = $this->userModel->getAvatar($this->session->userdata('username'));
             if ($admin == '1') {
+
                 redirect('admin');
             } else {
                 if ($suspended == '1') {
@@ -37,12 +37,18 @@ class Home extends CI_Controller
             $this->load->view('login_view');
     }
 
-
+/*LOGOUT FUNTION*/
+/*Functia de delogare.*/
     function logout()
     {
-        $this->session->unset_userdata('logged_in');
-        session_destroy();
-        $this->load->view('login_view');
+        $user_data = $this->session->all_userdata();
+        foreach ($user_data as $key => $value) {
+            if ($key != 'logged_in' && $key != '' && $key != 'username' && $key != 'avatar') {
+                $this->session->unset_userdata($key);
+            }
+        }
+        $this->session->sess_destroy();
+        redirect('login');
     }
 
 }

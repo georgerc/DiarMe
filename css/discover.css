@@ -1,47 +1,46 @@
 body {
-    background: -webkit-linear-gradient(#1A1A1B    , #333F44); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(#1A1A1B    , #333F44); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#1A1A1B    , #333F44); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#1A1A1B    , #333F44); /* Standard syntax */
+    background: -webkit-linear-gradient(#1A1A1B, #333F44); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#1A1A1B, #333F44); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#1A1A1B, #333F44); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#1A1A1B, #333F44); /* Standard syntax */
 }
+
 .pagination {
-	background-color: rgba(143,143,143,1);
-	width:40px;
-	height: 40px;
-	font-size: 30px;
-	outline:none;
-	border:none;
-	margin:35px 15px 0 15px;
-	line-height:40px;
+    background-color: rgba(143, 143, 143, 1);
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    outline: none;
+    border: none;
+    margin: 35px 15px 0 15px;
+    line-height: 40px;
 
 }
+
 a:hover {
-	text-decoration: none;
-	color:white;
+    text-decoration: none;
+    color: white;
 }
+
 .pagination:active {
-	background-color:lightblue;
+    background-color: lightblue;
 }
+
 .journal-list {
-	width: 100%;
-	margin: 20px auto;
+    width: 100%;
+    margin: 20px auto;
 }
+
 .entry-number {
-	font-size: 32px;
+    font-size: 32px;
 }
+
 .userbar {
-	width: 100%
+    width: 100%
 }
-#search {
-	color:Black;
-	width:90%;
-	margin:0 auto;
-	height:30px;
-	outline:none;
-	border:none;
-}
+
 #toggler:before {
-    content:"";
+    content: "";
     position: absolute;
     right: 100%;
     top: 26px;
@@ -53,50 +52,73 @@ a:hover {
 }
 
 #toggler {
-	background-color: #EEEEEE;
-	height:100%;
-	line-height:70px;
-	font-size:24px;
-    width:100%;
+    background-color: #EEEEEE;
+    min-height: 70px;
+    font-size: 24px;
+    width: 120%;
     position: relative;
-    -moz-border-radius:    10px;
+    -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
-    border-radius:         10px;
-}
-
-span,img {
-	cursor: pointer
-}
-.journal-entry {
-	margin:-20px auto;
-	width: 100%;
-	font-size: 1.4em;
-
-}
-.journal-cover {
-	width: 70px;
-	height: 70px;
-	float:right;
-}
-.journal-text {
-    font-family:sans-serif;
-	font-size:0.8em;
-    padding-top:10px;
-    text-indent: 10px;
-	display:none;
-	background-color:#222831;
-    color:white;
     border-radius: 10px;
 }
-@media only screen and (min-width:601px) {
-.username {
-	font-size:20px
-}
-.journal-list {
-	width: 75%;
 
+.text-jurnal {
+    white-space: pre-line;
 }
-.userbar {
-	width: 300px;margin-left:auto;margin-right:30px;margin-top:30px
+
+span, img {
+    cursor: pointer
 }
+
+.journal-entry {
+    margin-left:121px;
+    width: 60%;
+    font-size: 1.4em;
+}
+
+.user-pic {
+    width:80px;
+    height:80px;
+    position: relative;
+    left: -110px;
+    top: 72px;
+}
+
+.journal-text {
+    font-family: sans-serif;
+    font-size: 0.8em;
+    padding-top: 10px;
+    text-indent: 10px;
+    width: 120%;
+    display: none;
+    background-color: #222831;
+    color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+@media only screen and (min-width: 601px) {
+    .username {
+        font-size: 20px
+    }
+    .journal-entry {
+        width: 80%;
+        margin-right:auto;
+    }
+    .user-pic {
+        width: 80px;
+        height: 80px;
+    }
+    #toggler {
+        width:100%;
+    }
+    .journal-text {
+        width:100%;
+    }
+    .userbar {
+        width: 300px;
+        margin-left: auto;
+        margin-right: 30px;
+        margin-top: 30px
+    }
 }

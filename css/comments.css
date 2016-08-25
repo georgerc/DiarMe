@@ -1,0 +1,151 @@
+body {
+    background-color: #262626;
+}
+a:hover {
+    text-decoration: none;
+    color: white;
+}
+#buton-trimitere {
+    border-radius:0;
+}
+.like-div {
+    background-color:#FCFCFA;
+    color:black;
+    float:left;
+    margin:5px;
+    padding-right:10px;
+    height:30px;
+    line-height:30px;
+}
+.like-div button {
+    background-color: transparent;
+    outline: none;
+    border:none;
+
+}
+#comments, .journal-entry, .comment {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.like-div span:first-child {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-left:5px;
+    padding-right: 5px;
+    border-right:1px solid black;
+}
+#toggler {
+    background-color: #EEEEEE;
+    min-height:80px;
+    font-size: 24px;
+    width: 100%;
+    position: relative;
+    border-top-left-radius: 10px;
+    border-top-right-radius:10px;
+}
+
+
+.mesaj , .text-jurnal {
+    white-space: pre-line;
+
+}
+.all-comment {
+    margin: 30px auto;
+    padding:0;
+
+}
+#comment-write{
+    width:100%;
+    margin:0 auto;
+}
+#comment-view {
+    width:100%;
+    margin:0 auto;
+    margin-top:60px;
+}
+.comment {
+    width:100%;
+    min-height:50px;
+    color:white;
+    background-color: #0B0E13;
+    border:1px solid white;
+    padding:5px;
+    margin:0 auto;
+    padding-bottom:40px;
+}
+#likes {
+    float:left;
+    margin-right:20px;
+    margin-top:23px;
+}
+.journal-entry {
+    margin: 50px auto;
+    width: 100%;
+    font-size: 1.4em;
+}
+.journal-footer {
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius:10px;
+    padding-right:10px;
+}
+.journal-text {
+    font-family: sans-serif;
+    font-size: 0.8em;
+    padding-top: 10px;
+    text-indent: 10px;
+    background-color: #222831;
+    color: white;
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius:10px;
+}
+.journal-title {
+    padding-left: 10px;
+}
+textarea {
+    width:100%;
+    resize:none;
+    height:100px;
+    outline:none;
+    border:none;
+}
+.userbar {
+    width: 100%
+}
+.comment-username {
+    color:white;
+    position: relative;
+    top:0;
+}
+.odata {
+    color:white;
+    float:right;
+    position: relative;
+    top:0
+}
+@media only screen and (min-width: 751px) {
+    .odata {
+        margin-right: 15%;
+        position: relative;
+        top:0
+    }
+    .journal-entry {
+        width: 70%;
+
+    }
+    .comment {
+        width:70%;
+    }
+    .comments {
+        width:70%;
+        background-color:rgba(5,5,5,0.5);
+        padding:20px;
+    }
+    .comment-username {
+        margin-left: 15%;
+        position: relative;
+        top:0;
+    }
+
+    .userbar {
+        width: 300px;margin-left:auto;margin-right:30px;margin-top:30px
+    }
+
+}

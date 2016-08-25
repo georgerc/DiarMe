@@ -12,7 +12,8 @@ class Forgot_Password_C extends CI_Controller
     {
 
     }
-
+/*RESET PASSWORD*/
+/*Permite utilizatorul de a trimite un email cu resetarea parolei pentru a putea accesa contul din nou.*/
     public function reset_password()
     {
         $this->load->model('forgot_password_M');

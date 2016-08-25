@@ -7,7 +7,7 @@ class Login extends CI_Controller
     {
         parent::__construct();
     }
-
+/*RERECTIONARE IN CAZ CA URILIZATORUL NU ARE PERMISIUNE SAU ESTE DELOGAT*/
     function index()
     {
         $this->load->helper(array('form'));
