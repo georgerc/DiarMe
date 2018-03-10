@@ -18,11 +18,5 @@ Helper: HTMLPurifier,AJAX-Controller(requesting CSRF tokens when AJAX is in plac
 Development environment: XAMPP
 
 *******************
-Rezumat
-*******************
-DiarMe este o platforma care permite unui utilizator stocarea intr-un mod simplu si securizat(lol) a evenimentelor din viata acestuia.
-
+DiarMe is an environment in with users can safely store they most precious life moment.  
 **************************
-Prezentare extinsa
-**************************
-DiarMe este alcatuit din doua parti: Private Mode si Public Mode. Primul mod permite utilizatorului scrierea si salvarea unui jurnal intr-un mediu securizat. Deasemenea,acesta poate viziona istoricul locatiilor jurnalelor sale. Al doilea mod permite unui utilizator sa isi distribuie amintirile cu alti utilizatori, la randul lor utilizatorii pot comenta si da like.
